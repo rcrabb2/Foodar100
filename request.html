@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+	<title>Request</title>
+	<style>
+		body{
+			background-color:##FFF056;
+			font-family:verdana;
+		}.style1,.tip{
+			text-align:center;
+			column-count:3;
+		}#sign{
+			font-size:30px;
+			float:right;
+			width:180px;
+			text-align:center;
+			margin-top: 25px;
+		}h1{
+			text-align:center;
+		}h2{
+			color:#EFCC00;
+		}
+		footer{
+			column-count:3;
+		}
+		footer a{
+			text-decoration:none;
+		}
+		footer a:hover{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class = "navbar">
+		<img src="FoodarLogo.png" alt="Foodar" onclick="index.html"/> 
+		<a href="register.html" id="sign">Sign in/ Register </a>
+	</div>
+	<h1>Submit your Request</h1>
+	<form id = "email">
+		<label for "email"> Address: </label>
+			<input type = "email" name = "email" required />
+	</form>
+	
+	<br /> <br />
+	
+	<h2>Choose Your Style</h2>
+	<p></p>
+	<form action="#" method="post" class="choice" id="choice">
+		<div class="style1">
+			<label for "classic">Classic <br /> This is a classic treatment. <br /> Cost: $3 </label>
+				<input type= "radio" name="style1" id="classic" value="3" checked />
+			<br />			
+			<label for "premium">Premium <br /> Service goes beyond expectations. <br /> Cost: $5 </label>
+				<input type= "radio" name="style1"id="premium" value="5" />
+			<br />
+			<label for "Royal">Royal <br /> Your food is treated as royalty.<br /> Cost: $10 </input>
+				<input type= "radio" name="style1"id="royal" value="10" />
+			<br />
+		</div>
+	</form>	
+	
+	<br /> <br />
+	
+	<form id="Restaurant">
+		<label for "Restaurant">Restaurant: </label>
+			<input type = "text" name = Restaurant" required />
+			<br />
+	</form>
+	
+	<br /> <br />
+	<h2>Tip</h2>
+	<p></p>
+	
+	<form action="#" method="post" class="choice2" id="choice2">
+		<div class="tip">
+			<label for "good">Good Service <br /> They did their job <br /> 10% tip</label>
+				<input type= "radio" name="tip" id="good" value="1.1" checked />
+			<br />
+			<label for "great">Great Service <br /> They made you feel special. <br /> 15% tip</label>	
+				<input type= "radio" name="tip" id="premium" value="1.15" />
+			<br />
+			<label for "Excellent">Excellent Service <br />Wish I could give more  <br /> 20% tip</input>
+				<input type= "radio" name="tip" id="Excellent" value="1.2" />
+			<br />
+		</div>
+		<br />
+	</form>
+	
+	<form>
+		<button type = button name="getTotal" onclick= "both()"> Get Total</button>
+	</form>	
+	
+	<br /> <br />
+	
+	<p id="Total"></p>
+	
+	<script>
+		function both(){
+			var t = 0;
+			var style=Number(getRadioVal(document.getElementById('choice'),'style1'));
+			var tip=Number(getRadioVal(document.getElementById('choice2'),'tip'));
+			t = style*tip;
+			document.getElementById("Total").innerHTML="Total: "+ t;
+		}
+		function getRadioVal(form, name){
+			var val;
+			var radio=form.elements[name];
+			
+			for(var i=0; i<radio.length; i++){
+				if(radio[i].checked){
+					val=radio[i].value;
+					break;
+				}
+			}
+			return val;
+		}
+		
+	</script>
+	
+	<form>	
+		<button name="Submit" method = "Post">Request</button>
+	</form>
+	<br /> <br />
+</body>
+<footer>
+	<a href="index.html">About</a> <br />
+	<a href="register.html">Register</a> <br />
+	<a href="about2.html">How it all works</a> <br />
+	<a href="">Privacy Policy</a><br />
+	<a href="">Terms and Conditions</a> <br/>
+	<p>Posted by Rebecca Crabb</p>
+	<small>&copy; Copyright August 2017 </small>
+</footer>
