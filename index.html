@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+	<title>Home</title>
+	<style>
+		body{
+			background-color:##FFF056;
+			font-family:verdana;
+		}#sign{
+			font-size:30px;
+			float:right;
+			width:180px;
+			text-align:center;
+			margin-top: 25px;
+		}#title a{
+			float:right;
+		}.container{
+			position:fixed;
+			margin: 5% auto;
+			padding: 10px;
+			width:100%;
+			background-color:green;
+		}#Recipe{
+			display:block;
+			margin:auto;
+		}#banner{
+			visibility: hidden;
+			color:white;
+			font-family:verdana;
+			text-align: center;
+		}#close{
+			float:right;
+			width:180px;
+		}img{
+			margin:auto;
+		}h1{
+			color:#EFCC00;
+		}footer{
+			column-count:3;
+		}footer a{
+			text-decoration:none;
+		}footer a:hover{
+			color:red;
+		}#noodle{
+			width:50%;
+			margin-top: 90px;
+		}#chickCoupon, #tacoCoupon{
+			margin:none;
+			width:auto;
+		}#chickCoupon, #noodleCoupon, #tacoCoupon, #couponRobin{
+			display:none;
+			margin:auto;
+		}#ChickFilA:hover #chickCoupon, #NoodlesCompany:hover #noodleCoupon, #TacoBell:hover #tacoCoupon, #RedRobin:hover #couponRobin{
+			display:block;
+		}ul, .restaurants{
+			column-count:2;
+		}
+	</style>
+</head>
+<body onLoad = "setTimeout(showBanner, 5000);">
+	<div class = "container" id="banner">
+		<button class="close" id="close" onclick="document.getElementById('banner').style.display='none'">X</button>
+		<h1>The Banner</h1>
+	</div>
+	
+	<div class = "navbar">
+		<img src="FoodarLogo.png" alt="Foodar" onclick="index.html"/> 
+		<a href="register.html" id="sign">Sign in/ Register </a>
+	</div>
+	
+	<img src="https://i.pinimg.com/originals/bc/1d/54/bc1d54eab9be5d6ae1963548cc381a74.png"alt="Recipe" style="width:80%" id="Recipe"/>
+	
+	<h1>Our Restaurants</h1>
+		<div class="restaurants">
+			<div id="ChickFilA">
+				<img src = "https://www.chick-fil-a-list.com/Media/Img/main/cfa-foot-new.png" alt="Chick-fil-a" style="width:50%" id="chicken"/>
+				<div id="chickCoupon">
+					<img src = "https://vw-dixiedirectcard.storage.googleapis.com/cache/da/5a/da5a32c868e90c4f3f50ac61dcf1e049.jpg" alt="chicken Sandwich"/>
+				</div>
+			</div>
+			
+			<div id="NoodlesCompany">
+				<img src = "http://s3.amazonaws.com/media.fundable.com/media-assets/1381034565-noodles-startup.jpg" alt="Noodles and company" id="noodle"/>
+				<div id = "noodleCoupon">
+					<img src = "http://couponrebelle.com/wp-content/uploads/2016/10/noodles-and-co-coupon.jpg" alt="doubleBowl"/>
+				</div>
+			</div>
+			
+			<div id = "TacoBell">
+				<img src = "https://cdn.foodbeast.com/content/uploads/2016/09/Taco-Bell-Logo.jpg" alt="Taco-Bell-Logo" style="width:50%"/>
+				<div id = "tacoCoupon">
+					<img src = "http://couponscodesblog.com/wp-content/uploads/2016/11/Taco-Bell-Printable-Coupon.jpg" alt="friesSupreme"/>
+				</div>
+			</div>
+			<div id = "RedRobin">
+				<img src = "https://s3-media2.fl.yelpcdn.com/buphoto/oWJmjGD_-Bb4bWMJbrRefg/o.jpg" alt="Red robin" style="width:50%"/>
+				<br />
+				<div id = "couponRobin">
+				<img src = "https://www.couponpromos.org/wp-content/uploads/2014/06/red-robin-coupons-27.jpg" alt="8OffRedRobin"/>
+				</div>
+			</div>
+		</div>
+	<h1>Find a Driver near you!</h1>
+		<p>Type in your zipcode below and click Go! to find a driver near you.</p>
+	<form>
+		<input type = "number" id="number" name = "Zipcode" required />
+		<button name="submit" method = "Post" id="submit" onclick="checkZipcode(document.getElementById('number').value)" >Go!</button>
+	</form>
+	
+	<br />
+	
+	<p>Allowed Zipcodes:
+	<ul id="list">
+		<li>21411</li>
+		<li>21401</li>
+		<li>21402</li>
+		<li>21403</li>
+		<li>21404</li>
+		<li>21405</li>
+		<li>21409</li>
+		<li>21412</li>
+	</ul>
+
+	<br />
+</body>
+<script src="function.js"></script>
+<footer>
+	<a href="index.html">About</a> <br />
+	<a href="register.html">Register</a> <br />
+	<a href="about2.html">How it all works</a> <br />
+	<a href="">Privacy Policy</a><br />
+	<a href="">Terms and Conditions</a> <br/>
+	<p>Posted by Rebecca Crabb</p>
+	<small>&copy; Copyright August 2017 </small>
+</footer>
